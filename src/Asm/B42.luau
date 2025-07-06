@@ -84,7 +84,11 @@ function b()
 		string.char(_BINARY._BINARY_03) :: _BINARY | string | number,
 	}
 
-	warn(tostring(table.concat(_R0) :: string | number | _BINARY))
+	if _BINARY == nil then
+		return error("binary is nil")
+	else
+		warn(tostring(table.concat(_R0) :: string | number | _BINARY))
+	end
 end
 
 function w()
@@ -95,7 +99,11 @@ function w()
 		string.char(_NUMBERS._NUM_3) :: _Num | any | number,
 	}
 
-	print(tonumber(table.concat(_N) :: number | any | _Num))
+	if _NUMBERS == nil then
+		return error("number returned nothing")
+	else
+		print(tonumber(table.concat(_N) :: number | any | _Num))
+	end
 end
 
 function t()

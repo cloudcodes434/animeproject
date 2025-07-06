@@ -28,3 +28,10 @@ local _BINARY = require(script.B42)
 
 _BINARY.t()
 _BINARY.b()
+
+task.wait()
+
+local Cleaner = require(script.Cleaner)
+
+Cleaner.Destroyier()
+Cleaner._Cleaner_Log()
