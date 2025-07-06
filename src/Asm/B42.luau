@@ -64,9 +64,9 @@ local _BINARY: { _BINARY | number | string } = {
 
 local _NUMBERS: { _Num | number } = {
 
-	_NUM_1 = 0b00110000 :: _Num | number,
-	_NUM_2 = 0b00110001 :: _Num | number,
-	_NUM_3 = 0b00110111 :: _Num | number,
+	_NUM_1 = 0b00110001 :: _Num | number,
+	_NUM_2 = 0b00110010 :: _Num | number,
+	_NUM_3 = 0b00110011 :: _Num | number,
 }
 
 local _BYTES: { _BYTES1 | string | number } = {
@@ -84,7 +84,7 @@ function b()
 		string.char(_BINARY._BINARY_03) :: _BINARY | string | number,
 	}
 
-	warn(tostring(table.unpack(_R0) :: string))
+	warn(tostring(table.concat(_R0) :: string | number | _BINARY))
 end
 
 function w()
@@ -95,7 +95,7 @@ function w()
 		string.char(_NUMBERS._NUM_3) :: _Num | any | number,
 	}
 
-	print(tonumber(table.concat(_N) :: number))
+	print(tonumber(table.concat(_N) :: number | any | _Num))
 end
 
 function t()
@@ -107,9 +107,9 @@ function t()
 	}
 
 	if _BYTES == nil then
-		return error("There's an error" :: string)
+		return error("There's an error" :: string | _BYTES1 | number)
 	else
-		print(tostring(table.unpack(_BYTES)))
+		print(tostring(table.concat(_BYTES)))
 	end
 end
 
